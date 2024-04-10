@@ -21,7 +21,7 @@ install-doc:
 
 	install -vDm 644 $(DOC_FILES) -t $(DOC_DIR)
 
-install-media:
+install-hotnamectl:
 
 	install -vdm 755 "$(BIN_DIR)"
 	install -vDm 755 hotnamectl/hotnamectl "$(BIN_DIR)"
