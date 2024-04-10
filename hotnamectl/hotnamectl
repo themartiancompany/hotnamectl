@@ -23,7 +23,7 @@ _requirements() {
   true
 }
 
-_hotnamemctl() {
+_hotnamectl() {
   local \
     _opts=() \
     _prefix="" \
