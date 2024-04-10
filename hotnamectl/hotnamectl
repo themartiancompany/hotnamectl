@@ -6,7 +6,10 @@ _bin="$( \
       command \
         -v \
 	  "env")")"
-_lib="${_bin}/../lib"
+_usr="$( \
+  dirname \
+    "${_bin}")"
+_lib="${_usr}/lib"
 source \
   "${_lib}/libcrash-bash/crash-bash"
 
@@ -37,6 +40,7 @@ _hotnamectl() {
       -v \
         "hostnamectl")"
   [[ "${_hostnamectl}" != "" ]] && \
+  [ ! -L "${_hostnamectl}" ] && \
     "${_hostnamectl}" \
       "${_opts[@]}" && \
     return
@@ -124,7 +128,7 @@ shift \
   $(( \
     OPTIND - 1 \
   ))
-hostnamemctl_opts=(
+hostnamectl_opts=(
   "$@"
 )
 _set_overrides
