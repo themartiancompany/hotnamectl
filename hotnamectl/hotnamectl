@@ -48,7 +48,7 @@ _hotnamectl() {
   [[ "${TERMUX_VERSION}" != "" ]] && 
     _prefix="${_usr}"
   cat \
-    "${_hostname}"
+    "${_prefix}/etc/hostname"
 }
 
 # Set defaults
